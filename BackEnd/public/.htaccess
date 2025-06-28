@@ -1,0 +1,53 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        # Disable MultiViews and directory indexing for clean URLs and security
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    ##########################################
+    # ✅ Handle Authorization Header (JWT)
+    ##########################################
+
+    # If Authorization header exists...
+    RewriteCond %{HTTP:Authorization} .
+    # Pass it to PHP via environment variable
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Extra compatibility: also set the Authorization manually
+    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+    ##########################################
+    # ✅ Handle X-XSRF-Token Header (for SPA)
+    ##########################################
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    ##########################################
+    # ✅ Remove trailing slashes (except folders)
+    ##########################################
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    ##########################################
+    # ✅ Laravel Routing: Send everything to index.php
+    ##########################################
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+      ##########################################
+    # Protect /api/admin routes by Bearer token in Authorization header
+    ##########################################
+    RewriteCond %{REQUEST_URI} ^/api/admin
+    RewriteCond %{HTTP:Authorization} !^Bearer\ your_secret_token$
+    RewriteRule ^ - [F]
+
+    # Laravel routing fallback
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    
+</IfModule>

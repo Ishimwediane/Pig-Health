@@ -1,0 +1,387 @@
+.pig-breed-page {
+  width: 100%;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background: none;
+}
+
+.breed-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.breed-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.breed-header h1 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.breed-image {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.breed-image:hover {
+  transform: scale(1.02);
+}
+
+.breed-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.breed-content {
+  display: grid;
+  gap: 2.5rem;
+  padding: 0 1rem;
+}
+
+.breed-section {
+  background: white;
+  padding: 1.5rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breed-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.breed-sectionp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.breed-sectionp {
+  background: white;
+  padding: 2.5;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.breed-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.breed-sectionp h2 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.breed-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+.breed-sectionp h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+}
+
+.breed-section p {
+  line-height: 1.8;
+  color: #34495e;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.breed-sectionp p {
+  line-height: 1.8;
+  color: #34495e;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.breed-section ul {
+  list-style: disc inside;
+  color: #34495e;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  padding-left: 1.2rem;
+  display: block;
+  text-align: left;
+}
+.breed-sectionp ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem
+}
+
+
+
+.breed-section ul li {
+  margin-bottom: 0.7rem;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  position: static;
+  left: 0;
+  font-weight: 500;
+  text-align: left;
+  list-style-type: disc;
+}
+.breed-sectionp ul li {
+  padding: 1rem;
+  color: #34495e;
+  position: relative;
+  padding-left: 2.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.breed-sectionp ul li:hover {
+  background: #e9ecef;
+}
+/* Remove custom blue dot for breed-section lists, but keep for .performance-metrics if needed */
+.breed-section ul li:before {
+  display: none !important;
+}
+.breed-sectionp ul li:before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.performance-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.metric {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9ecef;
+  margin: 1.5rem;
+}
+
+.metric:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.metric h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.metric p {
+  color: #34495e;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .pig-breed-page {
+    padding: 1rem;
+  }
+
+  .breed-header {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .breed-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .breed-section {
+    padding: 1.5rem;
+  }
+
+  .performance-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .breed-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .breed-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add a subtle animation for section transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.breed-section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.profile-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.breed-header .breed-image {
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+.breed-profile-card {
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 420px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+  padding: 2rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #2ecc71;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.breed-profile-card h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.breed-profile-card ul {
+  list-style: disc inside;
+  color: #34495e;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  padding-left: 1.2rem;
+}
+
+.breed-profile-card ul li {
+  margin-bottom: 0.7rem;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  position: relative;
+  left: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .profile-layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .breed-header .breed-image,
+  .breed-profile-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .breed-section {
+    max-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.breed-section-row {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.breed-section-row .breed-section {
+  flex: 1 1 0;
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .breed-section-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

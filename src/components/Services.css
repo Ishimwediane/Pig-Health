@@ -1,0 +1,135 @@
+.services-container {
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.services-header {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: #C4A484;
+  margin-bottom: 0.5rem;
+}
+
+.services-header .subtitle {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: #F8E8D8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.service-icon span {
+  font-size: 1.5rem;
+}
+
+.service-card h3 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.vet-services-highlight {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+}
+
+.highlight-text {
+  flex: 1;
+}
+
+.highlight-text p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.find-vet-btn {
+  background: #C4A484;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.find-vet-btn:hover {
+  background: #B08968;
+}
+
+.highlight-image {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.highlight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vet-services-highlight {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+  }
+} 
